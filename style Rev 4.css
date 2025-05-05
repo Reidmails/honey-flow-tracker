@@ -1,0 +1,207 @@
+/* Basic Reset & Font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fffbeb; /* Light honey background */
+    /* Optional: Hexagonal background pattern */
+    background-image:
+        linear-gradient(rgba(255, 213, 79, 0.1) 1px, transparent 1px),
+        linear-gradient(60deg, rgba(255, 213, 79, 0.1) 1px, transparent 1px),
+        linear-gradient(120deg, rgba(255, 213, 79, 0.1) 1px, transparent 1px);
+    background-size: 20px 35px; /* Adjust size of hexagons */
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #b98000; /* Darker honey/gold */
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #d4a017; /* Medium honey/gold */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #fde68a; /* Light honey underline */
+    padding-bottom: 5px;
+}
+
+/* Tab Navigation */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #a0a0a0;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-link:hover {
+    color: #b98000;
+}
+
+.tab-link.active {
+    color: #b98000;
+    border-bottom-color: #ffc107; /* Bright honey yellow */
+}
+
+/* Tab Content */
+.tab-content {
+    display: none; /* Hide inactive tabs */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block; /* Show active tab */
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input[type="number"] {
+    /* Ensure spinner buttons are usable */
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle; /* Align checkbox better with label text */
+}
+
+.gift-group label {
+    display: inline-block; /* Allow checkbox and label on same line */
+    font-weight: normal;
+}
+
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    background-color: #ffc107; /* Bright honey yellow */
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e0a800; /* Darker shade on hover */
+}
+
+/* Specific button margins */
+#save-prices-btn, #record-sale-btn {
+    margin-top: 10px;
+}
+
+/* Sales Tab Specifics */
+.quantity-group, .gift-group, .total-cost-display, #manual-cost-section {
+    margin-top: 15px;
+}
+
+.total-cost-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b98000;
+    margin-bottom: 15px; /* Add space before record button */
+}
+
+.total-cost-display span {
+    color: #333; /* Make the number black */
+}
+
+
+/* History Table Styling */
+.table-container {
+    max-height: 400px; /* Limit height and make scrollable if needed */
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 4px; /* Optional: round corners of container */
+}
+
+#history-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove gaps between cells */
+    margin-top: 0; /* Remove default table margin if any */
+}
+
+#history-table th, #history-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee; /* Light lines between rows */
+}
+
+#history-table th {
+    background-color: #fffbeb; /* Light honey header */
+    font-weight: bold;
+    color: #b98000;
+    position: sticky; /* Keep header visible when scrolling */
+    top: 0;
+    z-index: 1;
+}
+
+#history-table tbody tr:nth-child(even) {
+    background-color: #fefcf3; /* Very light alternating row color */
+}
+
+#history-table tbody tr:hover {
+    background-color: #fdf6e0; /* Highlight row on hover */
+}
+
+#history-table td:last-child,
+#history-table th:last-child {
+    text-align: center; /* Center gift status */
+}
